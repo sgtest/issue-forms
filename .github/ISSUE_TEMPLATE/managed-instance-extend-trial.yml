@@ -1,0 +1,42 @@
+name: Managed instance trial extend
+description: Request to extend the trial period of a managed instance.
+title: 'Managed instance trial extend for [CUSTOMER NAME]'
+labels:
+- 'mi/extend-trial-request'
+- 'mi'
+- 'team/cloud'
+body:
+  - type: input
+    attributes:
+      label: Customer
+      description: 'Please enter the issue link of the [customer account](https://github.com/sourcegraph/accounts/issues).'
+      value: https://github.com/sourcegraph/accounts/issues/
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Additional days to extend
+      description: 'Please enter the number of days to be extended for the trial.'
+      value: '30'
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: 'Please provide any other necessary context for this request.'
+      value: |
+        - **Slack Discussion(s)**: n/a
+  - type: markdown
+    attributes:
+      value: |
+        ### For CEs
+
+        After creating this issue, please post a notice in the [#cloud](https://sourcegraph.slack.com/archives/C03JR7S7KRP) channel with a link to this issue.
+
+        You can find [managed instances requests SLA](https://handbook.sourcegraph.com/departments/product-engineering/engineering/cloud/devops/managed/#slas-for-managed-instances) in our handbook.
+  - type: markdown
+    attributes:
+      value: |
+        ### For Cloud teammates
+
+        Follow our playbook to [extend trial managed instance](https://handbook.sourcegraph.com/departments/cloud/trial_mi/#extend-trial-managed-instance).
